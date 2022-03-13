@@ -1,3 +1,5 @@
-﻿// See https://aka.ms/new-console-template for more information
+﻿using CollatzNumberEvaluator.App;
 
-Console.WriteLine("Hello, World!");
+var application = new App();
+
+application.Run();
