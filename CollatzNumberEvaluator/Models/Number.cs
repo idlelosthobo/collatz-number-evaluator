@@ -1,13 +1,10 @@
-﻿namespace CollatzNumberEvaluator.Models;
+﻿using LiteDB;
+
+namespace CollatzNumberEvaluator.Models;
 
 public class Number
 {
-    private ulong Value { get; set; }
-
-    public Number(ulong value)
-    {
-        this.Value = value;
-    }
-    
+    public ulong Value { get; set; }
+   
 }
 
