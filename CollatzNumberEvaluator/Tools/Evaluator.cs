@@ -20,11 +20,26 @@ public class Evaluator
         return number;
     }
     
-    private Number ProcessNumber(Number number)
+    public Number ProcessNumber(Number number)
     {
+        ulong value = number.Value;
+        ulong stepValue = number.Value;
+        List<ulong> stepList = new List<ulong>();
+        ulong stepLength = 0;
+
+        while (stepValue > 1)
+        {
+            stepValue = this.ApplyAlgorithm(stepValue);
+            stepList.Add(stepValue);
+            stepLength += 1;
+        }
+        
+        
         return new Number
         {
-            Value = this.ApplyAlgorithm(number.Value),
+            Value = number.Value,
+            StepLength = stepLength,
+            StepList = stepList
         };
     }
 
