@@ -1,10 +1,11 @@
-﻿using CollatzNumberEvaluator.Models;
+﻿using System.Runtime.InteropServices;
+using CollatzNumberEvaluator.Models;
 
 namespace CollatzNumberEvaluator.Tools;
 
 public class Evaluator
 {
-    private int MaxPathLengthAppendLimit = 10000;
+    private ulong StepLengthProcessLimit = 1000;
 
     private ulong ApplyAlgorithm(ulong number)
     {
@@ -23,21 +24,24 @@ public class Evaluator
     public Number ProcessNumber(Number number)
     {
         ulong value = number.Value;
+        bool isComplete = false;
         ulong stepValue = number.Value;
         List<ulong> stepList = new List<ulong>();
         ulong stepLength = 0;
 
-        while (stepValue > 1)
+        while (stepValue > 1 || stepLength >= StepLengthProcessLimit)
         {
             stepValue = this.ApplyAlgorithm(stepValue);
             stepList.Add(stepValue);
             stepLength += 1;
         }
-        
+
+        isComplete = stepLength < StepLengthProcessLimit;
         
         return new Number
         {
             Value = number.Value,
+            IsComplete = isComplete,
             StepLength = stepLength,
             StepList = stepList
         };

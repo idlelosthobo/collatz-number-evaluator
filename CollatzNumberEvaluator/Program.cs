@@ -2,5 +2,5 @@
 
 var application = new App();
 
-// application.Empty();
+application.Empty();
 application.Run();

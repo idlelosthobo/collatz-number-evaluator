@@ -46,11 +46,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\druge\\RiderProjects\\CollatzNumberEvaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
+      "projectUniqueName": "C:\\Users\\druge\\RiderProjects\\collatz-number-evaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
       "projectName": "CollatzNumberEvaluator",
-      "projectPath": "C:\\Users\\druge\\RiderProjects\\CollatzNumberEvaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
+      "projectPath": "C:\\Users\\druge\\RiderProjects\\collatz-number-evaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
       "packagesPath": "C:\\Users\\druge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\druge\\RiderProjects\\CollatzNumberEvaluator\\CollatzNumberEvaluator\\obj\\",
+      "outputPath": "C:\\Users\\druge\\RiderProjects\\collatz-number-evaluator\\CollatzNumberEvaluator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\druge\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -97,7 +97,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

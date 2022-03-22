@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lDdQ2nXez6XFhHw7wDejFBETQd9khb3lwr9p+EE5MJalzIMMnVcxKGYKGhWgU4KfzmUGPegu1nY3TdIxYmWONw==",
+  "dgSpecHash": "HT9GLtrEP5RLzCXLmiWfuOHngF6FGzcx9I+BaL2t80IfW86Rm2gYdc+2uMhCOrLxQ6ZG0sC/gyZhE9hAQgXaIA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\druge\\RiderProjects\\CollatzNumberEvaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
+  "projectFilePath": "C:\\Users\\druge\\RiderProjects\\collatz-number-evaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\druge\\.nuget\\packages\\litedb\\5.0.11\\litedb.5.0.11.nupkg.sha512"
   ],
