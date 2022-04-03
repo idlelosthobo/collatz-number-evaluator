@@ -4,10 +4,10 @@ namespace CollatzNumberEvaluator.Models;
 
 public class Number
 {
-    public ulong Value { get; set; }
+    public BigInteger Value { get; set; }
     public bool IsComplete { get; set; }
-    public ulong StepLength { get; set; }
-    public List<ulong> StepList { get; set; }
+    public BigInteger StepLength { get; set; }
+    public List<BigInteger> StepList { get; set; }
 
     public new string ToString()
     {

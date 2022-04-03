@@ -1,4 +1,5 @@
-﻿using CollatzNumberEvaluator.Models;
+﻿using System.Diagnostics;
+using CollatzNumberEvaluator.Models;
 using CollatzNumberEvaluator.Tools;
 using LiteDB;
 
@@ -10,7 +11,7 @@ public class App
 
     private string ConnectionString = "Collatz.db";
 
-    public Evaluator Evaluator = new Evaluator();
+    private Evaluator Evaluator = new Evaluator();
 
     public void Empty()
     {
@@ -22,7 +23,7 @@ public class App
             Value = 1,
             IsComplete = true,
             StepLength = 0,
-            StepList = new List<ulong>()
+            StepList = new List<BigInteger>()
         };
 
         numberCollection.Insert(firstNumber);
@@ -36,7 +37,7 @@ public class App
     
     public void Run()
     {
-        int NumberRunLimit = 200000;
+        const int numberRunLimit = 200000;
         using var db = new LiteDatabase(this.ConnectionString);
         var numberCollection = this.GetNumberCollection(db);
         Number lastNumber = numberCollection.FindOne(Query.All("Value", Query.Descending));
@@ -46,21 +47,24 @@ public class App
             Value = lastNumber.Value
         };
 
-        for (int i = 0; i < NumberRunLimit; i++)
+        var timer = new Stopwatch();
+
+        timer.Start();
+        Console.WriteLine($"Processing {numberRunLimit} Numbers with the Collatz Algorithm");
+        for (int i = 0; i < numberRunLimit; i++)
         {
 
             startNumber.Value += 1;    
             var newNumber = Evaluator.ProcessNumber(startNumber);
             numberCollection.Insert(newNumber);
+            if (i % (numberRunLimit / 10) == 0)
+            {
+                Console.WriteLine($"{i} of {numberRunLimit} Completed");
+            }
             
         }
-        
-        
-        // var results = numberCollection.Query();
-        // foreach (var result in results.ToList())
-        // {
-        //     Console.WriteLine(result.ToString());
-        // }
+        timer.Stop();
+        Console.WriteLine($"Run Time: {timer.Elapsed.ToString()}");
 
     }
     

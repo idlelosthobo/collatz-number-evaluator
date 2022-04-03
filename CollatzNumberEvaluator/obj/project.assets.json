@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "BigInteger/1.0.7": {
+        "type": "package",
+        "compile": {
+          "lib/net20/BigInteger.dll": {}
+        },
+        "runtime": {
+          "lib/net20/BigInteger.dll": {}
+        }
+      },
       "LiteDB/5.0.11": {
         "type": "package",
         "compile": {
@@ -14,6 +23,18 @@
     }
   },
   "libraries": {
+    "BigInteger/1.0.7": {
+      "sha512": "PaOPKvMc7s/RygNuD+4eMCBuzQOsQY8o4ja7If1fScGgVX/sq6LfYzXHXxqlfrh2gCl5k9yLSUZQw6edIIeI+w==",
+      "type": "package",
+      "path": "biginteger/1.0.7",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "biginteger.1.0.7.nupkg.sha512",
+        "biginteger.nuspec",
+        "lib/net20/BigInteger.dll"
+      ]
+    },
     "LiteDB/5.0.11": {
       "sha512": "6cL4bOmVCUB0gIK+6qIr68HeqjjHZicPDGQjvJ87mIOvkFsEsJWkIps3yoKNeLpHhJQur++yoQ9Q8gxsdos0xQ==",
       "type": "package",
@@ -37,6 +58,7 @@
   },
   "projectFileDependencyGroups": {
     "net6.0": [
+      "BigInteger >= 1.0.7",
       "LiteDB >= 5.0.11"
     ]
   },
@@ -46,11 +68,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\druge\\RiderProjects\\collatz-number-evaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
+      "projectUniqueName": "C:\\Users\\druge\\RiderProjects\\CollatzNumberEvaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
       "projectName": "CollatzNumberEvaluator",
-      "projectPath": "C:\\Users\\druge\\RiderProjects\\collatz-number-evaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
+      "projectPath": "C:\\Users\\druge\\RiderProjects\\CollatzNumberEvaluator\\CollatzNumberEvaluator\\CollatzNumberEvaluator.csproj",
       "packagesPath": "C:\\Users\\druge\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\druge\\RiderProjects\\collatz-number-evaluator\\CollatzNumberEvaluator\\obj\\",
+      "outputPath": "C:\\Users\\druge\\RiderProjects\\CollatzNumberEvaluator\\CollatzNumberEvaluator\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\druge\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -77,6 +99,10 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "BigInteger": {
+            "target": "Package",
+            "version": "[1.0.7, )"
+          },
           "LiteDB": {
             "target": "Package",
             "version": "[5.0.11, )"
@@ -100,5 +126,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'BigInteger 1.0.7' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "BigInteger",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

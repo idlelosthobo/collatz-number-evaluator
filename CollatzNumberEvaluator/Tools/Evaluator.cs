@@ -5,9 +5,9 @@ namespace CollatzNumberEvaluator.Tools;
 
 public class Evaluator
 {
-    private ulong StepLengthProcessLimit = 1000;
+    private readonly BigInteger _stepLengthProcessLimit = 1000;
 
-    private ulong ApplyAlgorithm(ulong number)
+    private BigInteger ApplyAlgorithm(BigInteger number)
     {
         if (number % 2 == 0)
         {
@@ -23,20 +23,20 @@ public class Evaluator
     
     public Number ProcessNumber(Number number)
     {
-        ulong value = number.Value;
+        BigInteger value = number.Value;
         bool isComplete = false;
-        ulong stepValue = number.Value;
-        List<ulong> stepList = new List<ulong>();
-        ulong stepLength = 0;
+        BigInteger stepValue = number.Value;
+        List<BigInteger> stepList = new List<BigInteger>();
+        BigInteger stepLength = 0;
 
-        while (stepValue > 1 || stepLength >= StepLengthProcessLimit)
+        while (stepValue > 1 || stepLength >= _stepLengthProcessLimit)
         {
             stepValue = this.ApplyAlgorithm(stepValue);
             stepList.Add(stepValue);
             stepLength += 1;
         }
 
-        isComplete = stepLength < StepLengthProcessLimit;
+        isComplete = stepLength < _stepLengthProcessLimit;
         
         return new Number
         {
